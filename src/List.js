@@ -1,24 +1,21 @@
 import React from 'react';
 
-export class List extends React.Component {
-  render() {
-    const { title } = this.props;
+const LANGUAGE = [
+  'Java',
+  'Scala',
+  'Perl'
+]
 
+export const List = ({title}) => {
     return (
       <div>
-        <h4>{ title }</h4>
-        <div>リストです</div>
+      <h4>{title}</h4>
+      {
+        LANGUAGE.map((lang,index)=>{
+          return <div key={index}>{lang}</div>
+        })
+      }
+      <h4>List</h4>
       </div>
     )
   }
-}
-
-
-/* export const List = (props) => {
-    return (
-      <div>
-          <h4>{props.title}</h4>
-          <h4>List</h4>
-      </div>
-    )
-  } */
